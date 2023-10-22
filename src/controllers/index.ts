@@ -10,4 +10,5 @@ export const index = async (req: Request, res: Response): Promise<void> => {
         status: 200,
         message: "hello world",
     }).status(200);
+    console.log("");
 };
