@@ -1,7 +1,7 @@
 import express from "express";
 import logger from "morgan";
 import * as path from "path";
-
+import cors from "cors";
 import { errorHandler, errorNotFoundHandler } from "./middlewares/errorHandler";
 
 // Routes
@@ -13,7 +13,7 @@ export const app = express();
 app.set("port", process.env.PORT || 8080);
 
 app.use(logger("dev"));
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use("/", index);
 
