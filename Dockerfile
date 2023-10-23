@@ -25,5 +25,9 @@ COPY --from=builder /app/dist ./dist
 # Skopiowanie pliku package.json oraz zainstalowanie tylko zależności produkcyjnych
 COPY --from=builder /app/package.json ./
 RUN npm install --only=production
+
+# Otwarcie portu, na którym nasłuchuje aplikacja
 EXPOSE 8080
-CMD [ "node", "server.js" ]
+
+# Uruchomienie aplikacji
+CMD [ "node", "dist/server.js" ]
