@@ -1,10 +1,15 @@
-import { app } from "./app";
+import * as dotenv from "dotenv";
+import { createServer } from "./app";
+dotenv.config();
+// import { app } from "./app";
 
+const app = createServer();
 const port = app.get("port");
 
-const server = app.listen(port, onListening);
-server.on("error", onError);
+console.log("process env ", process.env.PORT);
+const server = app.listen(process.env.PORT, onListening);
 
+server.on("error", onError);
 function onError(error: NodeJS.ErrnoException) {
     if (error.syscall !== "listen") {
         throw error;

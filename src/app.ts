@@ -1,21 +1,31 @@
-import express from "express";
+import express, { Express, Request, Response } from "express";
 import logger from "morgan";
 import * as path from "path";
+import cookieParser from "cookie-parser";
+
 import cors from "cors";
 import { errorHandler, errorNotFoundHandler } from "./middlewares/errorHandler";
 
 // Routes
-import { index } from "./routes/index";
-// Create Express server
-export const app = express();
+import { router } from "./routes/index";
 
-// Express configuration
-app.set("port", process.env.PORT || 8080);
+export function createServer(): express.Express {
+    const app: Express = express();
+    app.set("port", process.env.PORT || 8081);
 
-app.use(logger("dev"));
-app.use(cors());
-app.use(express.static(path.join(__dirname, "../public")));
-app.use("/", index);
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: false }));
+    app.use(express.static(path.join(__dirname, "../public")));
+    app.set("view engine", "ejs");
 
-app.use(errorNotFoundHandler);
-app.use(errorHandler);
+    app.use(cookieParser());
+    app.get("/api/", (req: Request, res: Response) => {
+        res.status(200).json("v122");
+    });
+    app.use("/api", router);
+    app.use(cors());
+
+    app.use(errorNotFoundHandler);
+    app.use(errorHandler);
+    return app;
+}
