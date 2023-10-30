@@ -10,6 +10,11 @@ const sendAnswer = async ({
     token: string;
     answer: any;
 }): Promise<Data> => {
+    console.log(
+        JSON.stringify({
+            answer: answer,
+        }),
+    );
     const res = await fetch(`https://zadania.aidevs.pl/answer/${token}`, {
         method: "POST",
         headers: {
