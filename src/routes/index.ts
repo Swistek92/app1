@@ -8,3 +8,4 @@ router.get("/helloapi", controller.helloapi);
 router.post("/openai", controller.openai);
 router.post("/moderation", controller.moderation);
 router.post("/blogger", controller.blogger);
+router.post("/liar", controller.liar);

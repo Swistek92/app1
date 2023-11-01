@@ -1,9 +1,10 @@
-const getTaskData = async (token: string): Promise<any> => {
+const getTaskData = async (token: string, data?: any): Promise<any> => {
     const task = await fetch(`https://zadania.aidevs.pl/task/${token}`, {
-        method: "GET",
+        method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
+        body: data,
     });
 
     if (!task.ok) {
