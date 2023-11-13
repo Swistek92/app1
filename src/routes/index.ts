@@ -9,3 +9,4 @@ router.post("/openai", controller.openai);
 router.post("/moderation", controller.moderation);
 router.post("/blogger", controller.blogger);
 router.post("/liar", controller.liar);
+router.post("/inprompt", controller.inprompt);
