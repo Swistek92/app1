@@ -4,6 +4,7 @@ import checkModerate from "./checkModerate";
 import sendAnswer from "./sendAnswer";
 import generateArticeBasedOnTitle from "./generateArticeBasedOnTitle";
 import validateAnswer from "./validateAnswer";
+import generateEmbedding from "./generateEmbedding";
 export {
     validateAnswer,
     Authorization,
@@ -11,4 +12,5 @@ export {
     checkModerate,
     sendAnswer,
     generateArticeBasedOnTitle,
+    generateEmbedding,
 };
