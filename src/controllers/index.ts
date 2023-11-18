@@ -6,6 +6,7 @@ import { liar } from "./liar";
 import { inprompt } from "./inprompt";
 import { embedding } from "./embedding";
 import { whisper } from "./whisper";
+import { functions } from "./functions";
 export {
     helloapi,
     openai,
@@ -15,4 +16,5 @@ export {
     inprompt,
     embedding,
     whisper,
+    functions,
 };
