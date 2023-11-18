@@ -13,3 +13,4 @@ router.post("/inprompt", controller.inprompt);
 router.post("/embedding", controller.embedding);
 router.post("/whisper", controller.whisper);
 router.post("/functions", controller.functions);
+router.post("/rodo", controller.rodo);

@@ -7,6 +7,8 @@ import { inprompt } from "./inprompt";
 import { embedding } from "./embedding";
 import { whisper } from "./whisper";
 import { functions } from "./functions";
+import { rodo } from "./rodo";
+
 export {
     helloapi,
     openai,
@@ -17,4 +19,5 @@ export {
     embedding,
     whisper,
     functions,
+    rodo,
 };
