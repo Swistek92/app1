@@ -16,3 +16,4 @@ router.post("/functions", controller.functions);
 router.post("/rodo", controller.rodo);
 router.post("/scraper", controller.scraper);
 router.post("/whoami", controller.whoami);
+router.post("/search", controller.search);

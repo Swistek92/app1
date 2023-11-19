@@ -10,6 +10,7 @@ import { whisper } from "./whisper";
 import { functions } from "./functions";
 import { rodo } from "./rodo";
 import { scraper } from "./scraper";
+import { search } from "./search";
 export {
     helloapi,
     openai,
@@ -23,4 +24,5 @@ export {
     rodo,
     scraper,
     whoami,
+    search,
 };
