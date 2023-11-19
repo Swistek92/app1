@@ -14,3 +14,5 @@ router.post("/embedding", controller.embedding);
 router.post("/whisper", controller.whisper);
 router.post("/functions", controller.functions);
 router.post("/rodo", controller.rodo);
+router.post("/scraper", controller.scraper);
+router.post("/whoami", controller.whoami);
