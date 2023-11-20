@@ -11,7 +11,9 @@ import { functions } from "./functions";
 import { rodo } from "./rodo";
 import { scraper } from "./scraper";
 import { search } from "./search";
+import { people } from "./people";
 export {
+    people,
     helloapi,
     openai,
     moderation,
