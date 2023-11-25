@@ -12,7 +12,9 @@ import { rodo } from "./rodo";
 import { scraper } from "./scraper";
 import { search } from "./search";
 import { people } from "./people";
+import { knowledge } from "./knowledge";
 export {
+    knowledge,
     people,
     helloapi,
     openai,
