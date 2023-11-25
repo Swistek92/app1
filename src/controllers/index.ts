@@ -13,7 +13,9 @@ import { scraper } from "./scraper";
 import { search } from "./search";
 import { people } from "./people";
 import { knowledge } from "./knowledge";
+import { tools } from "./tools";
 export {
+    tools,
     knowledge,
     people,
     helloapi,
