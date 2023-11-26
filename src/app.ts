@@ -11,7 +11,7 @@ import { router } from "./routes/index";
 
 export function createServer(): express.Express {
     const app: Express = express();
-    app.set("port", process.env.PORT || 8081);
+    app.set("port", process.env.PORT || 8080);
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
