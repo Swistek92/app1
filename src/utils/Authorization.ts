@@ -5,22 +5,29 @@ type Data = {
 };
 
 const Authorization = async (taskName: string): Promise<Data> => {
-    const apikey = await fetch(`https://zadania.aidevs.pl/token/${taskName}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            apikey: process.env.apikey,
-        }),
-    });
+    try {
+        const apikey = await fetch(
+            `https://zadania.aidevs.pl/token/${taskName}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    apikey: process.env.apikey,
+                }),
+            },
+        );
 
-    if (!apikey.ok) {
-        throw new Error(`HTTP error! status: ${apikey.status}`);
+        if (!apikey.ok) {
+            throw new Error(`HTTP error! status: ${apikey.status}`);
+        }
+
+        const data: Data = await apikey.json();
+        return data;
+    } catch (error) {
+        return error;
     }
-
-    const data: Data = await apikey.json();
-    return data;
 };
 
 export default Authorization;
