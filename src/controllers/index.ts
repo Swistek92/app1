@@ -16,7 +16,9 @@ import { knowledge } from "./knowledge";
 import { tools } from "./tools";
 import { gnome } from "./gnome";
 import { ownapi } from "./ownapi";
+import { trigerOwnApi } from "./trigerOwnApi";
 export {
+    trigerOwnApi,
     ownapi,
     gnome,
     tools,

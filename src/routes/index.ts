@@ -1,3 +1,5 @@
+import { cookieParser } from "cookie-parser";
+import { trigerOwnApi } from "./../controllers/trigerOwnApi";
 import { ownapi } from "./../controllers/ownapi";
 import { Router } from "express";
 import * as controller from "../controllers/index";
@@ -22,4 +24,5 @@ router.post("/people", controller.people);
 router.post("/knowledge", controller.knowledge);
 router.post("/tools", controller.tools);
 router.post("/gnome", controller.gnome);
-router.get("/ownapi", controller.ownapi);
+router.post("/ownapi", controller.ownapi);
+router.get("/trigerOwnApi", controller.trigerOwnApi);
