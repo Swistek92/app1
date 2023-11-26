@@ -17,7 +17,9 @@ import { tools } from "./tools";
 import { gnome } from "./gnome";
 import { ownapi } from "./ownapi";
 import { trigerOwnApi } from "./trigerOwnApi";
+import { meme } from "./meme";
 export {
+    meme,
     trigerOwnApi,
     ownapi,
     gnome,

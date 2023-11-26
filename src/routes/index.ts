@@ -22,3 +22,4 @@ router.post("/tools", controller.tools);
 router.post("/gnome", controller.gnome);
 router.post("/ownapi", controller.ownapi);
 router.get("/trigerOwnApi", controller.trigerOwnApi);
+router.get("/meme", controller.meme);

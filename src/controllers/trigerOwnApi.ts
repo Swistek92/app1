@@ -25,7 +25,7 @@ export const trigerOwnApi = async (
         const data = await Authorization("ownapi");
         const taskAnswer = await sendAnswer({
             token: data.token,
-            answer: "http://3.80.42.106:8080/api/ownapi",
+            answer: "http://rozmowyzlodowka.pl:8080/api/ownapi",
         });
         res.json({
             taskAnswer,
