@@ -1,3 +1,4 @@
+import { ownapi } from "./../controllers/ownapi";
 import { Router } from "express";
 import * as controller from "../controllers/index";
 
@@ -21,3 +22,4 @@ router.post("/people", controller.people);
 router.post("/knowledge", controller.knowledge);
 router.post("/tools", controller.tools);
 router.post("/gnome", controller.gnome);
+router.post("/ownapi", controller.ownapi);

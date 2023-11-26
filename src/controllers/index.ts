@@ -15,7 +15,9 @@ import { people } from "./people";
 import { knowledge } from "./knowledge";
 import { tools } from "./tools";
 import { gnome } from "./gnome";
+import { ownapi } from "./ownapi";
 export {
+    ownapi,
     gnome,
     tools,
     knowledge,

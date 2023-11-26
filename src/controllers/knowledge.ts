@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { getTaskData, Authorization, sendAnswer } from "../utils";
 import OpenAI from "openai";
 import axios from "axios";
-import { fetch } from "openai/_shims";
 type ExchangeRatesSeries = {
     Table: string;
     Currency: string;
@@ -164,40 +163,43 @@ export const knowledge = async (req: Request, res: Response): Promise<void> => {
         const chatAnswer = checkQuestion.choices[0].message.content;
 
         const answer = JSON.parse(chatAnswer);
-
-        if (answer.question === "country") {
-            const fetch: countryAnswer = await axios.get(
-                `https://restcountries.com/v3.1/name/${answer.country}`,
-            );
-            console.log(fetch);
-            const population = fetch.data[0].population;
-            const taskAnswer = await sendAnswer({
-                token: data.token,
-                answer: population,
-            });
-            res.json({
-                taskAnswer,
-                chatAnswer,
-                taskData,
-            }).status(200);
-        } else {
-            const fetch: ratesAnswer = await axios.get(
-                `https://api.nbp.pl/api/exchangerates/rates/A/${answer.currency}/
-`,
-            );
-            // console.log(fetch), console.log(fetch.Rates.Rate[0].Mid);
-            console.log(fetch.data.Rates.Rate[0].Mid);
-            const answer = fetch.data.Rates.Rate[0].Mid;
-            const taskAnswer = await sendAnswer({
-                token: data.token,
-                answer: answer,
-            });
-            res.json({
-                taskAnswer,
-                chatAnswer,
-                taskData,
-            }).status(200);
-        }
+        res.json({
+            chatAnswer,
+            taskData,
+        }).status(200);
+        //         if (answer.question === "country") {
+        //             const fetch: countryAnswer = await axios.get(
+        //                 `https://restcountries.com/v3.1/name/${answer.country}`,
+        //             );
+        //             console.log(fetch);
+        //             const population = fetch.data[0].population;
+        //             const taskAnswer = await sendAnswer({
+        //                 token: data.token,
+        //                 answer: population,
+        //             });
+        //             res.json({
+        //                 taskAnswer,
+        //                 chatAnswer,
+        //                 taskData,
+        //             }).status(200);
+        //         } else {
+        //             const fetch: ratesAnswer = await axios.get(
+        //                 `https://api.nbp.pl/api/exchangerates/rates/A/${answer.currency}/
+        // `,
+        //             );
+        //             // console.log(fetch), console.log(fetch.Rates.Rate[0].Mid);
+        //             console.log(fetch.data.Rates.Rate[0].Mid);
+        //             const answer = fetch.data.Rates.Rate[0].Mid;
+        //             const taskAnswer = await sendAnswer({
+        //                 token: data.token,
+        //                 answer: answer,
+        //             });
+        //             res.json({
+        //                 taskAnswer,
+        //                 chatAnswer,
+        //                 taskData,
+        //             }).status(200);
+        //         }
     } catch (error) {
         console.error(error);
         res.json({
