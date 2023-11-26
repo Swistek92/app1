@@ -18,7 +18,9 @@ import { gnome } from "./gnome";
 import { ownapi } from "./ownapi";
 import { trigerOwnApi } from "./trigerOwnApi";
 import { meme } from "./meme";
+import { optimaldb } from "./optimaldb";
 export {
+    optimaldb,
     meme,
     trigerOwnApi,
     ownapi,

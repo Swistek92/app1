@@ -23,3 +23,4 @@ router.post("/gnome", controller.gnome);
 router.post("/ownapi", controller.ownapi);
 router.get("/trigerOwnApi", controller.trigerOwnApi);
 router.get("/meme", controller.meme);
+router.get("/optimaldb", controller.optimaldb);
