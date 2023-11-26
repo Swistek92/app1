@@ -20,6 +20,7 @@ export function createServer(): express.Express {
 
     app.use(cookieParser());
     app.get("/api/", (req: Request, res: Response) => {
+        console.log("im a log");
         res.status(200).json("v122");
     });
     app.use("/api", router);
