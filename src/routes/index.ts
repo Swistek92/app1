@@ -22,4 +22,4 @@ router.post("/people", controller.people);
 router.post("/knowledge", controller.knowledge);
 router.post("/tools", controller.tools);
 router.post("/gnome", controller.gnome);
-router.post("/ownapi", controller.ownapi);
+router.get("/ownapi", controller.ownapi);

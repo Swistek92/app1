@@ -41,16 +41,20 @@ export const ownapi = async (req: Request, res: Response): Promise<void> => {
         });
 
         const chatanswer = chatCompletion.choices[0].message.content;
-        const taskAnswer1 = await fetch(`https://zadania.aidevs.pl/answer/${data.token}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
+
+        const taskAnswer1 = await fetch(
+            `https://zadania.aidevs.pl/answer/${data.token}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    answer: "http://3.80.42.106:8080/api/ownapi",
+                    reply: chatanswer,
+                }),
             },
-            body: JSON.stringify({
-                answer: "",
-                reply: chatanswer,
-            }),
-        });
+        );
         const answer = await taskAnswer1.json();
 
         // const anaswerObj = {
@@ -61,10 +65,9 @@ export const ownapi = async (req: Request, res: Response): Promise<void> => {
         // const answer = await sendAnswer(anaswerObj);
         // console.log(taskData);
         // const question = taskData.msg;
-     res.json({
-
-         answer,
-     }).status(200);
+        res.json({
+            answer,
+        }).status(200);
     } catch (error) {
         res.json({
             status: 500,
