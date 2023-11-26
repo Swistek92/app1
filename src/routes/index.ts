@@ -1,13 +1,9 @@
-import { cookieParser } from "cookie-parser";
-import { trigerOwnApi } from "./../controllers/trigerOwnApi";
-import { ownapi } from "./../controllers/ownapi";
 import { Router } from "express";
 import * as controller from "../controllers/index";
 
 export const router = Router();
 
 router.get("/helloapi", controller.helloapi);
-
 router.post("/openai", controller.openai);
 router.post("/moderation", controller.moderation);
 router.post("/blogger", controller.blogger);
