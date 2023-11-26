@@ -7,7 +7,7 @@ const app = createServer();
 const port = app.get("port");
 
 console.log("process env ", process.env.PORT);
-const server = app.listen(process.env.PORT, onListening);
+const server = app.listen(process.env.PORT || 8080, onListening);
 
 server.on("error", onError);
 function onError(error: NodeJS.ErrnoException) {
