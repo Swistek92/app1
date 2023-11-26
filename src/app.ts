@@ -23,6 +23,11 @@ export function createServer(): express.Express {
         console.log("im a log");
         res.status(200).json("v122");
     });
+
+    app.get("/", (req: Request, res: Response) => {
+        console.log("im a log");
+        res.status(200).json("hello main page");
+    });
     app.use("/api", router);
     app.use(cors());
 
