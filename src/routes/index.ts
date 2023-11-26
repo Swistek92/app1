@@ -20,3 +20,4 @@ router.post("/search", controller.search);
 router.post("/people", controller.people);
 router.post("/knowledge", controller.knowledge);
 router.post("/tools", controller.tools);
+router.post("/gnome", controller.gnome);

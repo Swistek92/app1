@@ -14,7 +14,9 @@ import { search } from "./search";
 import { people } from "./people";
 import { knowledge } from "./knowledge";
 import { tools } from "./tools";
+import { gnome } from "./gnome";
 export {
+    gnome,
     tools,
     knowledge,
     people,
