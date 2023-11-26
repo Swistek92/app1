@@ -1,10 +1,10 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "Node16",
         "esModuleInterop": true,
         "target": "ES2022",
         "noImplicitAny": true,
-        "moduleResolution": "node",
+        "moduleResolution": "Node16",
         "sourceMap": true,
         "outDir": "dist",
         "baseUrl": ".",
